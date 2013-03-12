@@ -25,7 +25,7 @@ include_recipe "build-essential"
 end
 
 gem_package "fog" do
-  version "1.9.0"
+  version node[:route53][:fog_version]
   action :install
 end
 
