@@ -24,7 +24,10 @@ include_recipe "build-essential"
   package pkg
 end
 
-gem_package "fog"
+gem_package "fog" do
+  version node[:route53][:fog_version]
+  action :install
+end
 
 require 'rubygems'
 Gem.clear_paths
